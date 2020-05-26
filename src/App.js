@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-// import Routes from './routes';
 import GlobalStyle from './styles/global';
 
 function App() {
@@ -11,6 +10,25 @@ function App() {
     setTech([...tech, newTech]);
     setNewTech('');
   }
+
+  // didMount
+  useEffect(() => {
+    const storageTech = localStorage.getItem('tech');
+
+    if (storageTech) {
+      setTech(JSON.parse(storageTech));
+    }
+
+    // didUnmount
+    // return () => {
+    //   document.removeEventListener();
+    // };
+  }, []);
+
+  // didUpdate
+  useEffect(() => {
+    localStorage.setItem('tech', JSON.stringify(tech));
+  }, [tech]);
 
   return (
     <>
