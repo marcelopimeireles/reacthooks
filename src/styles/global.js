@@ -15,12 +15,30 @@ export default createGlobalStyle`
   body {
     background: #7159c1;
     -webki-font-smoothing: antialiased !important;
+    padding: 16px;
   }
 
   body, input, button {
+    margin: 8px 8px 0 0;
+    padding: 8px 16px;
     color: #222;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
+  }
+
+  input {
+    background: #7159c1;
+    border: 1px solid #fff;
+    color: #fff;
+  }
+
+  ul {
+    list-style: none;
+    color: #fff;
+    li {
+      padding: 8px 0;
+      text-transform: uppercase;
+    }
   }
 
   button {
