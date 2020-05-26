@@ -1,2 +1,1 @@
-# Rocketshoes
-## A shoe React Redux ecommerce
+# ReactHooks
