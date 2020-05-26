@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 
 import GlobalStyle from './styles/global';
 
@@ -6,10 +6,10 @@ function App() {
   const [tech, setTech] = useState(['ReactJS', 'React Native']);
   const [newTech, setNewTech] = useState('');
 
-  function handleAdd() {
+  const handleAdd = useCallback(() => {
     setTech([...tech, newTech]);
     setNewTech('');
-  }
+  }, [newTech, tech]);
 
   // didMount
   useEffect(() => {
